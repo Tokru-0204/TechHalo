@@ -1,0 +1,142 @@
+.ps-breadcrumb {
+    background-color: #fff !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+/* Reset some default styles */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f9;
+  color: #2c3e50;
+  padding: 30px;
+} */
+
+/* Main container */
+.promotion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-header {
+  text-align: center;
+  font-size: 2rem;
+  color: #34495e;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Card Layout */
+.promotion-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(262px, 1fr));
+  gap: 30px;
+}
+
+.promotion-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promotion-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Info Section */
+.promotion-info {
+  margin-bottom: 20px;
+}
+
+.promotion-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color:#19cda9;
+  margin-bottom: 12px;
+}
+
+.promotion-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+/* Details Section */
+.promotion-details {
+  font-size: 1.4rem;
+  color: #2c3e50;
+}
+
+.discount-info {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 1000;
+  color: #e74c3c;
+}
+
+.promotion-details p {
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.apply-button {
+  background-color:#dc3545;
+  color: white;
+}
+
+.apply-button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.saved-button {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.saved-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .promotion-list {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+  }
+
+  .promotion-card {
+    padding: 20px;
+  }
+
+  .promotion-name {
+    font-size: 1.4rem;
+  }
+
+  .promotion-description {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,17 @@
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .main-image-wrapper {
+    max-width: 200px;
+    margin-bottom: 15px;
+  }
+  
+  .main-image {
+    width: 100%;
+    object-fit: contain;
+  }
+  

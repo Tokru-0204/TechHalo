@@ -1,0 +1,196 @@
+.ps-breadcrumb {
+  background-color: #fff !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 5rem;
+  color: #d3d3d3;
+}
+.full {
+  color: orange;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: orange;
+}
+
+.my-page /deep/ .ngx-pagination{
+    margin: auto !important;
+}
+
+.my-page /deep/ .ngx-pagination .current {
+    padding: 0px;
+}
+
+.my-page /deep/ .ngx-pagination .current span {
+    padding: 7px 16px !important;
+    background-color: #19cda9 !important;
+    border-radius: 10%;
+}
+
+.my-page /deep/ .ngx-pagination li {
+    margin: 4px;
+}
+
+.my-page /deep/ .ngx-pagination li a {
+    padding: 7px 16px !important;
+    background-color: rgba(212, 212, 212, 0.233);
+    border-radius: 10%;
+}
+
+/* Màu nền nút phân trang */
+/* Định dạng chung cho danh sách Danh Mục */
+/* Định dạng mặc định cho link */
+.ps-list--categories li a {
+  color: #333; /* Màu chữ mặc định */
+  text-decoration: none; /* Bỏ gạch chân mặc định */
+  position: relative; /* Để tạo hiệu ứng với ::after */
+  padding: 5px 10px;
+  display: block; /* Toàn bộ vùng a có thể được hover */
+  transition: color 0.3s ease; /* Hiệu ứng mượt khi đổi màu */
+}
+
+/* Đường gạch chân khi hover - bắt đầu ẩn */
+.ps-list--categories li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Độ dày của đường gạch */
+  background-color: #19cda9; /* Màu của đường gạch */
+  transform: scaleX(0); /* Bắt đầu với độ rộng bằng 0 */
+  transform-origin: left; /* Gốc bắt đầu chạy từ trái sang phải */
+  transition: transform 0.3s ease; /* Hiệu ứng mượt khi chạy */
+}
+
+/* Hover - đổi màu chữ và hiển thị đường gạch chân */
+.ps-list--categories li a:hover {
+  color: #19cda9; /* Màu chữ khi hover */
+}
+
+.ps-list--categories li a:hover::after {
+  transform: scaleX(1); /* Đường gạch chạy qua toàn bộ chữ */
+}
+
+/* Bố cục chính của bộ lọc */
+.ps-layout__left {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Tiêu đề từng bộ lọc */
+.widget-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e3e3e3;
+  padding-bottom: 5px;
+}
+
+/* Danh sách các mục trong bộ lọc */
+.ps-list--categories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ps-list--categories li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* Phong cách cho checkbox */
+.ps-list--categories input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  accent-color: #19cda9; /* Màu khi chọn checkbox */
+  cursor: pointer;
+}
+
+/* Nhãn (label) cho checkbox */
+.ps-list--categories label {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover */
+.ps-list--categories li:hover label {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Bố cục khi nhiều mục bộ lọc */
+.widget_shop {
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+/* Độ cuộn cho danh sách dài */
+.ps-custom-scrollbar {
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #19cda9 #e3e3e3; /* Firefox */
+}
+
+/* Độ cuộn trên Chrome */
+.ps-custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ps-custom-scrollbar::-webkit-scrollbar-track {
+  background: #e3e3e3;
+  border-radius: 10px;
+}
+
+.ps-custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #19cda9;
+  border-radius: 10px;
+}
+
+/* Màu sắc khi hover vào scrollbar */
+.ps-custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e89e00;
+}
+.widget-title {
+  display: flex;               /* Dùng flexbox để căn chỉnh */
+  justify-content: space-between; /* Căn chỉnh tiêu đề và mũi tên */
+  align-items: center;         /* Căn giữa chiều dọc */
+  cursor: pointer;
+  font-weight: 550;         /* Giảm độ đậm của tiêu đề */
+}
+
+.widget-title i {
+  font-size: 1.5rem;           /* Cài đặt kích thước của mũi tên */
+  margin-left: 10px;           /* Khoảng cách giữa tiêu đề và mũi tên */
+  transition: transform 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+}
+
+.widget-title[aria-expanded='true'] i {
+  transform: rotate(180deg);    /* Xoay mũi tên khi mở rộng */
+}
+
+@media (max-width: 768px) {
+  .ps-shopping {
+    width: 100%; /* Đảm bảo phần select chiếm đầy chiều rộng */
+    justify-content: center; /* Căn giữa phần select */
+    margin-top: 10px; /* Khoảng cách phía trên cho phần select */
+    margin-bottom: 7px;
+}
+}

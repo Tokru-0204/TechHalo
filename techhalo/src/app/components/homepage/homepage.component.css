@@ -1,0 +1,131 @@
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 5rem;
+  color: #d3d3d3;
+}
+.full {
+  color: #fcb800;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #fcb800;
+}
+.ps-block__left i {
+  color: #19cda9; /* Thay đổi mã màu theo ý bạn */
+}
+.ps-btn {
+background-color: #19cda9; /* Màu nền button */
+}
+
+.carousel {
+
+height: 400px;
+}
+.video-player-container {
+position: relative;
+width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+aspect-ratio: 16 / 8.5; /* Tỷ lệ 16:9 */
+margin: 0 auto;
+background-color: #000;
+}
+
+video {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Đảm bảo không méo video */
+}
+
+.nav-button {
+position: absolute;
+top: 50%; /* Căn giữa theo chiều dọc */
+transform: translateY(-50%);
+width: 30px;
+height: 50px;
+border: none;
+border-radius: 2px;
+font-size: 24px;
+font-weight: bold;
+cursor: pointer;
+display: none; /* Ẩn mặc định */
+justify-content: center;
+align-items: center;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: transform 0.2s ease, background-color 0.3s ease; /* Hiệu ứng hover mượt */
+}
+
+.nav-button.prev {
+left: 10px; /* Định vị bên trái */
+}
+
+.nav-button.next {
+right: 10px; /* Định vị bên phải */
+}
+
+.video-player-container:hover .nav-button {
+display: flex; /* Hiển thị nút khi hover vào video */
+}
+
+.nav-button:hover {
+transform: translateY(-50%) scale(1.1); /* Phóng to mà không thay đổi vị trí */
+}
+
+.nav-button:active {
+transform: translateY(-50%) scale(0.9); /* Hiệu ứng nhấn */
+}
+
+.col-xl-6 p {
+text-align: justify; /* Căn đều đoạn văn */
+}
+.col-xl-6 .ps-block__content p {
+text-align: center;
+margin-top: -12px;
+}
+
+
+/* Thiết lập kiểu cho các mục sản phẩm */
+.ps-product1 {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 15px;
+background-color: #f9f9f9;
+border-radius: 10px;    
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.ps-product1:hover {
+transform: translateY(-5px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Đặt kiểu cho hình ảnh sản phẩm */
+.ps-product__thumbnail img {
+max-width: 100%;
+height: auto;
+object-fit: contain;
+border-radius: 8px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.img_ncc {
+  width: 100%;
+  height: auto;
+  object-fit: contain;  /* Giữ tỷ lệ gốc của hình ảnh */
+  border-radius: 8px;   /* Tạo góc bo tròn */
+  transition: transform 0.3s ease;  /* Hiệu ứng chuyển động */
+}
+.img_ncc {
+  mix-blend-mode: darken;
+}
+
+
+/* Trên màn hình lớn (> 768px), hiển thị lại phần tử */
+@media (max-width: 769px) {
+  .ps-product .hover {
+    padding: 0;
+  }
+}

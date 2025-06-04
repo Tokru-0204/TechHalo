@@ -1,0 +1,51 @@
+<div class="modal-body">
+    <form [formGroup]="addUsersForm">
+      <div class="form-group">
+        <label>Người dùng áp dụng</label>
+        <select formControlName="applyType" (change)="onApplyTypeChange()" class="form-control">
+          <!-- <option value=""></option> -->
+          <option value="all">Tất cả người dùng</option>
+          <option value="specific">Người dùng cụ thể</option>
+        </select>
+      </div>
+
+      <div *ngIf="applyType === 'specific'" class="form-group">
+        <label>Tài khoản</label>
+        <input type="text" class="form-control mb-2" placeholder="Tìm theo tên người dùng" (keyup)="onSearchUsers($event)">
+        <div class="scrollable-user-list">
+          <div class="form-check d-flex align-items-center" *ngFor="let user of filteredUsers" (click)="toggleUserSelection(user.userId)">
+            <input 
+              type="checkbox" 
+              class="form-check-input" 
+              [checked]="isUserSelected(user.userId)"
+              (click)="$event.stopPropagation()" 
+            >
+            <span class="form-check-label">{{ user.name }}</span>
+           
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <div class="applied-users-section">
+        <label>Người dùng đã áp dụng khuyến mãi</label>
+        <div class="applied-users-list">
+            <!-- Nếu có người dùng được áp dụng mã giảm giá, chúng sẽ hiển thị dưới đây -->
+            <div class="applied-user-item" *ngFor="let user of appliedDiscountUsers; let i = index">
+                <span class="user-name">{{ i + 1 }}. {{ user.name }}</span>
+                <button type="button" class="btn btn-danger btn-sm delete-button" (click)="removeUserFromPromotion(user.userId)">Xóa</button>
+            </div>
+            <!-- Nếu không có người dùng, khung vẫn hiển thị nhưng trống -->
+            <div *ngIf="appliedDiscountUsers.length === 0" class="text-center text-muted">
+              Không có người dùng nào được áp dụng khuyến mãi
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="applyUsers()">Áp dụng</button>
+    <button type="button" class="btn btn-secondary" (click)="close()">Hủy bỏ</button>
+</div>

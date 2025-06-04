@@ -1,0 +1,75 @@
+<div class="modal-body">
+    <form [formGroup]="addProductsForm">
+      <div class="form-group">
+        <label>Sản phẩm áp dụng</label>
+        <select formControlName="applyType" (change)="onApplyTypeChange()" class="form-control">
+          <option value="all">Tất cả sản phẩm</option>
+          <option value="category">Theo Loại Sản Phẩm</option>
+          <option value="supplier">Theo nhà cung cấp</option>
+          <option value="specific">Chọn sản phẩm cụ thể</option>
+        </select>
+      </div>
+  
+      <div *ngIf="applyType === 'category'" class="form-group">
+        <label>Category</label>
+        <select formControlName="categoryId" (change)="onCategoryChange($event)" class="form-control">
+          <!-- <option value="">Chọn một loại sản phẩm</option> -->
+          <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+        </select>
+      </div>
+  
+      <div *ngIf="applyType === 'supplier'" class="form-group">
+        <label>Supplier</label>
+        <select formControlName="supplierId" (change)="onSupplierChange($event)" class="form-control">
+          <!-- <option value="">Chọn một nhà cung cấp</option> -->
+          <option *ngFor="let supplier of suppliers" [value]="supplier.supplierId">{{ supplier.name }}</option>
+        </select>
+      </div>
+      
+      <div *ngIf="applyType === 'specific'" class="form-group">
+        <label>Specific Products</label>
+        <input type="text" class="form-control mb-2" placeholder="Tìm theo tên sản phẩm" (keyup)="onSearchProducts($event)">
+  
+        <div class="scrollable-product-list">
+          <div class="form-check d-flex align-items-center" *ngFor="let product of filteredProducts" (click)="toggleProductSelection(product.productId)">
+            <input 
+              type="checkbox" 
+              class="form-check-input" 
+              [checked]="isProductSelected(product.productId)"
+              (click)="$event.stopPropagation()" 
+            >
+            <img [src]="product.image" alt="{{ product.name }}" class="product-image mr-2">
+            <span class="form-check-label">{{ product.name }}</span>
+     
+          </div>
+        </div>
+      </div>
+      <hr class="section-divider">
+
+    <!-- Applied Discount Products Section -->
+    <div class="applied-products-section">
+        <label>Sản phẩm được áp dụng mã khuyến mãi</label>
+        <div class="applied-products-list">
+            <!-- Nếu có sản phẩm được áp dụng, chúng sẽ hiển thị dưới đây -->
+            <div class="applied-product-item" *ngFor="let product of appliedDiscountProducts; let i = index">
+                <span class="product-index">{{ i + 1 }}.</span>
+                <img [src]="product.image" alt="{{ product.name }}" class="product-image-small">
+                <span class="product-name">{{ product.name }}</span>
+                <button type="button" class="btn btn-danger btn-sm delete-button" (click)="removeProductFromPromotion(product.productId)">Xóa</button>
+            </div>
+            <!-- Nếu không có sản phẩm, khung vẫn hiển thị nhưng trống -->
+            <div *ngIf="appliedDiscountProducts.length === 0" class="text-center text-muted">
+                Không có sản phẩm nào được áp dụng mã khuyến mãi
+            </div>
+        </div>
+    </div>
+    
+    
+    </form>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="applyProducts()">Áp dụng</button>
+    <button type="button" class="btn btn-secondary" (click)="close()">Hủy bỏ</button>
+  </div>
+  

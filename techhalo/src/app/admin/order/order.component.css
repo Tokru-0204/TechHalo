@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+}
+@media print {
+  /* Ẩn tất cả nội dung khác */
+  body * {
+    display: none !important;
+  }
+  /* Hiển thị chỉ nội dung cần in */
+  #print-container, #print-container * {
+    display: block !important;
+  }
+}

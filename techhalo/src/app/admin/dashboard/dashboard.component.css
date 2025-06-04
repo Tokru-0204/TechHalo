@@ -1,0 +1,58 @@
+.card {
+    border-left: 4px solid transparent;
+    border-radius: 0.5rem;
+  }
+  
+  .border-left-primary {
+    border-left-color: #4e73df; /* Màu xanh dương */
+  }
+  
+  .border-left-success {
+    border-left-color: #1cc88a; /* Màu xanh lá */
+  }
+  
+  .border-left-info {
+    border-left-color: #36b9cc; /* Màu xanh da trời nhạt */
+  }
+  
+  .border-left-warning {
+    border-left-color: #f6c23e; /* Màu vàng */
+  }
+  
+  .text-primary {
+    color: #4e73df !important;
+  }
+  
+  .text-success {
+    color: #1cc88a !important;
+  }
+  
+  .text-info {
+    color: #36b9cc !important;
+  }
+  
+  .text-warning {
+    color: #f6c23e !important;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+  #divChart {
+    position: relative;
+    height: 40vh; /* Chiều cao của biểu đồ */
+    min-height: 200px; /* Chiều cao tối thiểu để đảm bảo biểu đồ không quá nhỏ */
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem; /* Khoảng cách giữa viền và biểu đồ */
+  }
+  
+  canvas {
+    display: block;  /* Đảm bảo canvas không bị kéo dài */
+    width: 100%; /* Canvas sẽ chiếm toàn bộ chiều rộng của div */
+    height: 100% !important; /* Canvas chiếm hết chiều cao của div */
+    object-fit: contain; /* Đảm bảo tỷ lệ của biểu đồ không bị biến dạng */
+  }
+  
+  

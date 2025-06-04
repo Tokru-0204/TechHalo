@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Danh sách khuyến mãi</h1>
+</div>
+  <div class="row">
+    <div class="col-12">
+      <mat-form-field>
+        <mat-label>Tìm kiếm</mat-label>
+        <input matInput type="text" (keyup)="search($event)" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="float: right; margin-left: 10px;" (click)="exporter.exportTable('csv', {fileName:'Danh sách mã khuyến mãi'})">Xuất Excel</button>
+      <app-add-promotion-code style="float: right;" (saveFinish)="finish()"></app-add-promotion-code>
+
+      <table mat-table matTableExporter #exporter="matTableExporter" [dataSource]="listData" matSort class="mat-elevation-z8" style="width: 100%;">
+        <ng-container matColumnDef="code">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Mã</th>
+          <td mat-cell *matCellDef="let row">{{ row.code }}</td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Mô tả</th>
+          <td mat-cell *matCellDef="let row">{{ row.description }}</td>
+        </ng-container> -->
+        <ng-container matColumnDef="discount">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Giảm giá</th>
+          <td mat-cell *matCellDef="let row">
+            <ng-container *ngIf="row.type === 'percentage'; else fixedDiscount">
+              {{ row.discount/100 | percent }}
+            </ng-container>
+            <ng-template #fixedDiscount>
+              {{ row.discount | currencyVietnam }} 
+            </ng-template>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="startDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Ngày bắt đầu</th>
+          <td mat-cell *matCellDef="let row">{{ row.startDate | date: 'dd-MM-yyyy' }}</td>
+        </ng-container>
+        <ng-container matColumnDef="endDate">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Ngày kết thúc</th>
+          <td mat-cell *matCellDef="let row">{{ row.endDate | date: 'dd-MM-yyyy' }}</td>
+        </ng-container>
+        <ng-container matColumnDef="minOrderValue">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Giá trị tối thiểu</th>
+          <td mat-cell *matCellDef="let row">{{ row.minOrderValue | currencyVietnam }}</td>
+        </ng-container>
+        <ng-container matColumnDef="maxUses">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Số lần sử dụng tối đa</th>
+          <td mat-cell *matCellDef="let row">{{ row.maxUses }}</td>
+        </ng-container>
+        <ng-container matColumnDef="currentUses">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Đã sử dụng</th>
+          <td mat-cell *matCellDef="let row">{{ row.currentUses }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;">Cập nhật</th>
+          <td mat-cell *matCellDef="let row" style="text-align: center;">
+            <app-edit-promotion-code [id]="row.promotionCodeId" (editFinish)="finish()"></app-edit-promotion-code>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="applyproducts">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;">Sản phẩm áp dụng</th>
+          <td mat-cell *matCellDef="let row" style="text-align: center;">
+            <a (click)="openApplyProducts(row.promotionCodeId)" class="btn btn-link" style="color: steelblue; cursor: pointer;">
+              <i class="fas fa-tags"></i>
+            </a>
+          </td>
+        </ng-container>
+        
+        
+        <ng-container matColumnDef="applyToUsers">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;">Người dùng áp dụng</th>
+          <td mat-cell *matCellDef="let row" style="text-align: center;">
+            <a (click)="openApplyUsers(row.promotionCodeId)" class="btn btn-link" style="color: steelblue; cursor: pointer;">
+              <i class="fas fa-user-plus"></i>
+            </a>
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="deactivate">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;">Ngừng kích hoạt</th>
+          <td mat-cell *matCellDef="let row" style="text-align: center;">
+            <a (click)="deactivate(row.promotionCodeId, row.code)" style="color: steelblue; cursor: pointer;">
+              <i class="fa fa-lock"></i> <!-- Sử dụng biểu tượng khóa -->
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+      </table>
+
+      <mat-paginator [length]="promotionCodesLength" showFirstLastButtons [pageSize]="8" [pageSizeOptions]="[8, 25, 50, 100]">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

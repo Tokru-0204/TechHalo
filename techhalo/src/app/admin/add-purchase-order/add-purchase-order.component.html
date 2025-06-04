@@ -1,0 +1,86 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+      <h2 class="modal-title m-0">Nhập hàng</h2>
+  </div>
+  <!-- Nội dung -->
+ 
+    <div class="modal-body p-4">
+      <form [formGroup]="postForm">
+        
+
+        <!-- <div class="form-group mb-3">
+          <label for="category" class="form-label">Danh mục:</label>
+          <select class="form-control" id="category" formControlName="categoryId" required>
+            <option *ngFor="let category of categories" [value]="category.categoryId">
+              {{ category.categoryName }}
+            </option>
+          </select>
+        </div> -->
+
+        <div class="form-group mb-3">
+          <label for="supplier" class="form-label">Nhà cung cấp:</label>
+          <select 
+            class="form-control" 
+            id="supplier" 
+            formControlName="supplierId" 
+            required 
+            (change)="onSupplierChange($event)"
+          >
+            <option *ngFor="let supplier of suppliers" [value]="supplier.supplierId">
+              {{ supplier.name }}
+            </option>
+          </select>
+        </div>
+        
+        <div *ngIf="products.length > 0" class="form-group mb-3">
+          <label for="product" class="form-label">Sản phẩm:</label>
+          <select 
+            class="form-control" 
+            id="product" 
+            formControlName="productId" 
+            required
+          >
+            <!-- Tùy chọn mặc định với id = 0 -->
+            <option value="0" disabled selected>Chọn sản phẩm</option>
+            <option *ngFor="let product of products" [value]="product.productId">
+              {{ product.name }}
+            </option>
+          </select>
+        </div>
+        
+          <!-- <div *ngIf="products.length === 0" class="alert alert-warning" role="alert">
+            Không có sản phẩm nào từ nhà cung cấp đã chọn.
+          </div> -->
+        
+        
+
+        <div class="form-group mb-3">
+          <label for="quantity" class="form-label">Số lượng:</label>
+          <input type="number" class="form-control" id="quantity" formControlName="quantity" min="1" placeholder="Nhập số lượng" required />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="price" class="form-label">Đơn giá:</label>
+          <input type="number" class="form-control" id="price" formControlName="price" min="1" placeholder="Nhập đơn giá" required />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="totalMoney" class="form-label">Tổng tiền:</label>
+          <input type="number" class="form-control" id="totalMoney" [value]="calculateTotal()" readonly />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="create_at" class="form-label">Ngày tạo:</label>
+          <input type="date" class="form-control" id="create_at" formControlName="create_at" readonly />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="update_at" class="form-label">Ngày cập nhật:</label>
+          <input type="date" class="form-control" id="update_at" formControlName="update_at" readonly />
+        </div>
+
+        <button mat-raised-button color="primary" [disabled]="postForm?.invalid" (click)="save()">Thêm</button>
+      </form>
+    </div>
+</ng-template>
+<button mat-raised-button color="primary" (click)="open(content)">Nhập hàng</button>

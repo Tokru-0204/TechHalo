@@ -1,0 +1,16 @@
+.ps-breadcrumb {
+    background-color: #fff !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    
+}
+#about-us {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  #about-us img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures image covers the space */
+  }
+  

@@ -1,0 +1,7 @@
+<app-header *ngIf="showHeaderFooter"></app-header>
+<router-outlet></router-outlet>
+<app-footer *ngIf="showHeaderFooter"></app-footer>
+
+<div *ngIf="showZaloChat">
+    <div class="zalo-chat-widget" data-oaid="2556975430116014914" data-welcome-message="Xin chào! Hãy nhắn tin với chúng tôi." data-autopopup="1" data-width="350" data-height="420"></div>
+</div>

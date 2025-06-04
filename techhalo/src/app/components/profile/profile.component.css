@@ -1,0 +1,189 @@
+.ps-breadcrumb {
+  background-color: #fff !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+/* Styling cho các phần tử chung */
+.my-page /deep/ .ngx-pagination {
+  margin: auto !important;
+}
+
+.my-page /deep/ .ngx-pagination .current,
+.my-page /deep/ .ngx-pagination .current span {
+  padding: 0px;
+  background-color: #19cda9 !important;
+  border-radius: 10%;
+}
+
+.my-page /deep/ .ngx-pagination .current span {
+  padding: 7px 16px !important;
+}
+
+.my-page /deep/ .ngx-pagination li {
+  margin: 4px;
+}
+
+.my-page /deep/ .ngx-pagination li a {
+  padding: 7px 16px !important;
+  background-color: rgba(212, 212, 212, 0.233);
+  border-radius: 10%;
+}
+
+/* Ảnh đại diện chung */
+.ps-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Các phần thông tin và hành động của người dùng */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page {
+  margin-top: 7px;
+  color: black;
+}
+
+.profile-actions .btn {
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #19cda9;
+  color: black;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.profile-actions .btn:hover {
+  background-color: #17b295;
+}
+
+/* Header widget */
+.ps-widget__header {
+  margin-bottom: 20px;
+}
+
+.ps-widget__header img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+/* Modal Styling */
+.modal-header {
+  background-color: #19cda9;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+  
+}
+
+
+.modal-body {
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.3rem;
+  
+}
+
+.custom-file-label {
+  text-overflow: ellipsis;
+}
+
+.form-control {
+  border-radius: 2px;
+  font-size: 1.3rem;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #19cda9;
+  outline: none;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.invalid-feedback {
+  font-size: 1.2rem;
+  color: red;
+}
+
+/* Nút hành động trong modal */
+.btn-custom {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s, background-color 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #9e9e9e;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #475657;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:active {
+  transform: translateY(2px);
+}
+
+.btn-primary {
+  background-color: #1ebf9f;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #19cda9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(2px);
+}
+
+/* Hiệu ứng hover cho tất cả các nút */
+.btn-custom:hover {
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Các trường thông tin và các phần nhập liệu */
+.form-group label {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+
+/* Modal body container */
+.modal-body p {
+  color: #333;
+  font-size: 3rem;
+}

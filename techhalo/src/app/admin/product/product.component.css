@@ -1,0 +1,8 @@
+table {
+    width: 100%;
+}
+td, th {
+    white-space: nowrap; /* Không cho phép xuống dòng */
+    overflow: hidden; /* Ẩn phần chữ vượt quá */
+    text-overflow: ellipsis; /* Thêm dấu "..." nếu chữ bị cắt */
+}

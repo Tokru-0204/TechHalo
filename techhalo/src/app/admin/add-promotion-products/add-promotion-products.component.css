@@ -1,0 +1,199 @@
+/* Ensure the scrollable product list has a fixed height */
+.scrollable-product-list {
+    max-height: 100px;
+    min-height: 100px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Style each product item as a clickable label */
+.form-check {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    /* padding: 5px; */
+    cursor: pointer; /* Makes it look clickable */
+    transition: background-color 0.2s;  
+}
+
+.form-check:hover {
+    background-color: #f0f0f0; /* Add a hover effect */
+}
+
+.form-check-input {
+    margin-right: 10px;
+    margin-bottom: 2px;
+    cursor: pointer; /* Ensures checkbox has a pointer cursor */
+}
+
+.product-image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.form-check-label {
+    flex: 1;
+}
+
+
+.section-divider {
+    margin: 15px 0;
+    border-top: 1px solid #ddd;
+  }
+  
+  .applied-products-section {
+    margin-top: 10px;
+  }
+  
+  .applied-products-list {
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .applied-product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .product-image-small {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .product-name {
+    margin-left: 10px;
+  }
+  
+  .applied-product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between name and delete button */
+    margin-bottom: 8px;
+}
+
+.product-image-small {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.product-name {
+    flex-grow: 1; /* Allows name to take up remaining space */
+}
+
+.delete-button {
+    margin-left: auto; /* Pushes button to the far right */
+}
+
+/* Khung sản phẩm được áp dụng mã giảm giá */
+.applied-products-list {
+    max-height: 160px;
+    min-height: 160px; /* Đảm bảo khung có chiều cao cố định */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9; /* Màu nền của khung */
+}
+
+/* Định dạng từng sản phẩm được áp dụng */
+.applied-product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Giãn cách tên sản phẩm và nút xóa */
+    margin-bottom: 8px;
+}
+
+/* Ảnh sản phẩm nhỏ */
+.product-image-small {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Tên sản phẩm */
+.product-name {
+    flex-grow: 1; /* Cho phép tên chiếm không gian còn lại */
+}
+
+/* Nút xóa */
+.delete-button {
+    margin-left: auto; /* Đẩy nút xóa sang bên phải */
+    background-color: #dc3545; /* Màu đỏ */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Hover hiệu ứng nút xóa */
+.delete-button:hover {
+    background-color: #c82333; /* Tối hơn khi hover */
+}
+.product-item-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* Ensures the content wraps in a new line if needed */
+}
+
+.product-index {
+  font-weight: bold;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.product-image-container {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.product-image-small {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column; /* Stack the name below the image */
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 5px; /* Space between name and delete button */
+}
+
+.delete-button {
+  margin-left: auto;
+  margin-top: 5px;
+}
+
+.applied-products-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.applied-product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}

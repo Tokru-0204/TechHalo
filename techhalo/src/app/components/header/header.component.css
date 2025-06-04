@@ -1,0 +1,135 @@
+
+.header {
+    background-color: #19cda9; /* Replace with the desired color code */
+}
+
+.header__top {
+    background-color: #19cda9; /* Example for changing the top section's background */
+}
+
+.navigation {
+    background-color: #19cda9; /* Example for changing the navigation bar's background */
+}
+
+.ps_logo {
+    margin-top: -80px;
+}
+
+/* Media Query cho màn hình nhỏ (dưới 768px) */
+@media (max-width: 768px) {
+    header {
+        display: block; /* Hiển thị header trên màn hình nhỏ */
+    }
+    .navigation__right {
+        display: none;
+    }
+
+}
+
+/* Media Query cho màn hình lớn (trên 768px) */
+@media (min-width: 768px) {
+    header {
+        display: block; /* Ẩn header trên màn hình lớn */
+    }
+}
+/* Đặt container là flexbox để căn chỉnh các phần tử theo hàng ngang */
+.menu-container {
+    margin-top: 5px;
+    margin-left: -10px;
+    display: flex;
+    align-items: center;       /* Căn giữa theo chiều dọc */
+    justify-content: center;    /* Căn giữa các phần tử theo chiều ngang */
+    gap: 20px;                  /* Khoảng cách giữa các phần tử */
+  }
+  
+  /* Căn giữa biểu tượng và văn bản trong menu__toggle */
+  .menu__toggle {
+    display: flex;
+    align-items: center;       /* Căn giữa theo chiều dọc */
+  }
+  
+
+  .menu__toggle i {
+    margin-right: 5px; 
+  }
+/* Style cho mục "Danh mục" có submenu */
+.menu-item--has-submenu {
+    position: relative;
+}
+/* Ẩn submenu khi không hover */
+.submenu {
+    display: none; /* Mặc định ẩn submenu */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Đặt submenu nằm bên phải mục cha */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    min-width: 200px; /* Đảm bảo submenu có chiều rộng tối thiểu */
+}
+/* Hiển thị submenu khi hover */
+.menu-item--has-submenu:hover .submenu {
+    display: block;
+}
+/* Style cho mũi tên */
+.menu-item--has-submenu i {
+    margin-left: 51px;
+}
+
+/* Cải thiện sự tương phản khi hover submenu */
+.submenu li a {
+    display: block;           /* Đảm bảo mỗi link chiếm toàn bộ chiều rộng của submenu */
+    width: 100%;              /* Chiếm toàn bộ chiều rộng của submenu */
+    padding: 10px 15px;       /* Padding để tạo không gian trong submenu */
+    color: #333;              /* Màu chữ mặc định */
+    text-decoration: none;    /* Bỏ gạch dưới */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;       /* Thêm bo góc nhẹ cho các mục */
+}
+
+/* Màu nền và chữ khi hover trên submenu */
+.submenu li a:hover {
+    background-color: #19cda9; /* Màu nền của submenu khi hover */
+    color: #fff;               /* Màu chữ khi hover */
+}
+/* Mặc định, hiển thị menu cho Desktop */
+.desktop-menu {
+    display: block;
+}
+
+/* Mặc định, ẩn menu cho Mobile */
+.mobile-menu {
+    display: none;
+}
+
+/* Media Query cho màn hình nhỏ hơn 768px (Mobile) */
+@media (max-width: 768px) {
+    /* Hiển thị menu cho Mobile */
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .mobile-menu .menu__toggle::before { 
+        display: none; /* Ẩn dấu gạch hoàn toàn */
+    }
+}
+
+/* Media Query cho màn hình lớn hơn 768px (Desktop) */
+@media (min-width: 768px) {
+    /* Hiển thị menu cho Desktop */
+    .desktop-menu {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}

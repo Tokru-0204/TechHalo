@@ -1,0 +1,82 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h2 class="modal-title">Thêm mã khuyến mãi mới</h2>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="postForm">
+            <div class="row">
+                <!-- Cột trái -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Mã</label>
+                        <input type="text" class="form-control" formControlName="code" (blur)="onBlur('code')" />
+                    </div>
+                    <div class="form-group">
+                        <label>Loại</label>
+                        <select class="form-control" formControlName="type" (blur)="onBlur('type')">
+                          <option value="percentage">Phần trăm</option>
+                          <option value="fixed">Cố định</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày bắt đầu</label>
+                        <input type="date" class="form-control" formControlName="startDate" (blur)="onBlur('startDate')" />
+                    </div>
+                    <div class="form-group">
+                        <label>Số lần sử dụng tối đa</label>
+                        <input type="number" class="form-control" formControlName="maxUses" (blur)="onBlur('maxUses')" />
+                        <div *ngIf="postForm.get('maxUses')?.touched && postForm.get('maxUses')?.hasError('maxUsesInvalid')">
+                          <small class="text-danger">Số lần sử dụng phải lớn hơn 0.</small>
+                        </div>
+                    </div>
+                </div>
+  
+                <!-- Cột phải -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Mô tả</label>
+                        <input type="text" class="form-control" formControlName="description" (blur)="onBlur('description')" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giảm giá</label>
+                        <div class="input-group">
+                          <input type="number" class="form-control" formControlName="discount" (blur)="onBlur('discount')" />
+                          <span class="input-group-text" *ngIf="postForm.get('type')?.value === 'percentage'">%</span>
+                          <span class="input-group-text" *ngIf="postForm.get('type')?.value === 'fixed'">VNĐ</span>
+                        </div>
+                        <div *ngIf="postForm.get('discount')?.touched && postForm.get('discount')?.hasError('percentageRange')">
+                          <small class="text-danger">Giảm giá phải nằm trong khoảng từ 0 đến 100%.</small>
+                        </div>
+                        <div *ngIf="postForm.get('discount')?.touched && postForm.get('discount')?.hasError('fixedAmount')">
+                          <small class="text-danger">Giảm giá phải lớn hơn 0 VNĐ.</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày kết thúc</label>
+                        <input type="date" class="form-control" formControlName="endDate" (blur)="onBlur('endDate')" />
+                        <div *ngIf="postForm.get('endDate')?.touched && postForm.get('endDate')?.hasError('endDateInvalid')">
+                          <small class="text-danger">Ngày kết thúc phải sau ngày bắt đầu.</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá trị tối thiểu</label>
+                        <input type="number" class="form-control" formControlName="minOrderValue" (blur)="onBlur('minOrderValue')" />
+                        <div *ngIf="postForm.get('minOrderValue')?.touched && postForm.get('minOrderValue')?.hasError('minOrderValueInvalid')">
+                          <small class="text-danger">Giá trị tối thiểu phải lớn hơn 0.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Hàng mới cho trạng thái và nút thêm -->
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-end align-items-end">
+                    <button mat-raised-button color="primary" (click)="save()">Thêm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </ng-template>
+  
+  <button mat-raised-button color="primary" (click)="open(content)">Thêm mã khuyến mãi</button>
+  

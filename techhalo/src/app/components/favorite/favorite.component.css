@@ -1,0 +1,27 @@
+.ps-breadcrumb {
+    background-color: #fff !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.my-page /deep/ .ngx-pagination .current {
+    padding: 0px;
+}
+
+.my-page /deep/ .ngx-pagination .current span {
+    padding: 7px 16px !important;
+    background-color: #19cda9 !important;
+    border-radius: 10%;
+}
+
+.my-page /deep/ .ngx-pagination li {
+    margin: 4px;
+}
+
+.my-page /deep/ .ngx-pagination li a {
+    padding: 7px 16px !important;
+    background-color: rgba(212, 212, 212, 0.233);
+    border-radius: 10%;
+}
+.ps-section__header h1 {
+    margin-top: -50px;
+    margin-bottom: -50px;
+}

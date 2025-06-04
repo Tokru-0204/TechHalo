@@ -1,0 +1,46 @@
+<div class="ps-breadcrumb">
+  <div class="ps-container">
+      <ul class="breadcrumb">
+          <li><a [routerLink]="['/home']">Trang chủ</a></li>
+          <li>Săn mã khuyến mãi</li>
+      </ul>
+  </div>
+</div>
+<div class="promotion-container">
+  <div class="promotion-list">
+    <div *ngFor="let code of promotionCodes" class="promotion-card">
+      <div class="promotion-info">
+        <h3 class="promotion-name">{{ code.code }}</h3>
+        <p class="promotion-description">{{ code.description }}</p>
+        <div class="promotion-details">
+          <div class="discount-info">
+            <span *ngIf="code.type === 'fixed'">
+              Giảm <strong>{{ code.discount | currencyVietnam }}</strong>
+            </span>
+            <span *ngIf="code.type === 'percentage'">
+              Giảm <strong>{{ code.discount }}%</strong>
+            </span>
+          </div>
+          <p><strong>Hạn sử dụng mã:</strong></p>
+          <p>{{ formatDate(code.startDate) }} - {{ formatDate(code.endDate) }}</p>
+          <p><strong>Đơn hàng tối thiểu:</strong> {{ code.minOrderValue | currencyVietnam }}</p>
+          <p><strong>Số lần sử dụng còn lại:</strong> {{ code.maxUses - code.currentUses }}</p>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <ng-container *ngIf="!isExpiredOrOutOfStock(code); else expired">
+        <button *ngIf="!code.saved" (click)="applyPromotion(code, $event)" class="apply-button">
+          Lưu
+        </button>
+        <button *ngIf="code.saved" class="saved-button" disabled>Đã lưu</button>
+      </ng-container>
+      
+      <!-- Template hiển thị khi mã đã hết hạn hoặc hết số lượng -->
+      <ng-template #expired>
+        <button class="expired-button" disabled>Đã hết hạn</button>
+      </ng-template>
+    </div>
+  </div>
+</div>
+

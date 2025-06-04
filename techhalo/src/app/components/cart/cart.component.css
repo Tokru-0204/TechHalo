@@ -1,0 +1,87 @@
+.ps-breadcrumb {
+    background-color: #fff !important;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .ps-block__promotion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ps-btn {
+    background-color: #19cda9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ps-btn:hover {
+    background-color: #1eab9f;
+}
+
+.ps-btn-1 {
+    background-color: #19cda9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.ps-btn-1:hover {
+    background-color: #1eab9f;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.promo-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.promo-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.promo-item button {
+    background-color: #19cda9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.promo-item button:hover {
+    background-color: #1eab9f;
+}
+
+
+.ps-btn--remove {
+    margin-left: 15px;
+    background-color:#dc3545;
+    color: white;
+}
+.ps-btn--remove:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+.ps-section__header h1 {
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+
+.ps-product__content {
+    max-width: 500px; /* Điều chỉnh độ rộng của phần tên sản phẩm */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }

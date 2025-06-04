@@ -1,0 +1,404 @@
+/* General Styles */
+.ps-section--account {
+    padding: 20px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+.custom-table {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.custom-table th, .custom-table td {
+    vertical-align: middle;
+    text-align: left;
+    padding: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.custom-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    color: #000000;
+}
+
+.custom-table td {
+    background-color: #fafafa;
+}
+
+.custom-table tr:nth-child(even) td {
+    background-color: #f8f8f8;
+}
+
+/* Avatar and User Info */
+.user-info-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+   
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-details {
+    margin-left: 20px;
+}
+
+.user-details .user-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.user-details .join-date {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Buttons */
+.btn-primary, .btn-edit {
+    font-size: 1.3rem;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #19cda9;
+    color: black;
+    margin-right: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #17b295;
+    color: black;
+}
+
+.btn-edit {
+    background-color: #19cda9;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-edit:hover {
+    background-color: #17b295;
+    color: black;
+}
+
+/* Modal Styling */
+.modal-header {
+    background-color: #19cda9;
+    color: white;
+    padding: 1rem;
+}
+
+.modal-title {
+    font-size: 1.6rem;
+}
+
+.modal-body .form-group label {
+    font-size: 16px;
+}
+
+.modal-body .form-control {
+    padding: 0.9rem;
+    font-size: 16px;
+    border-radius: 0.3rem;
+}
+
+.modal-body .invalid-feedback {
+    font-size: 16px;
+    color: red;
+}
+
+.modal-body .btn-primary {
+    background-color: #19cda9;
+    color: black;
+    font-size: 16px;
+    padding: 0.7rem 2rem;
+    border-radius: 0.3rem;
+}
+
+.modal-body .btn-primary:hover {
+    background-color: #17b295;
+    color: black;
+}
+
+/* Custom File Input */
+.custom-file-input:focus ~ .custom-file-label {
+    border-color: #19cda9;
+    box-shadow: 0 0 0 0.2rem rgba(25, 205, 169, 0.25);
+}
+
+.custom-file-label::after {
+    content: 'Tải lên';
+    background-color: #19cda9;
+    color: black;
+    padding: 0.5rem 1.2rem;
+    font-size: 16px;
+    border-radius: 0.3rem;
+}
+
+/* Button - Cancel & Save */
+.btn-custom {
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.btn-secondary.btn-custom {
+    background-color: #d3d3d3;
+    color: #333;
+    border: none;
+}
+
+.btn-secondary.btn-custom:hover {
+    background-color: #b0b0b0;
+}
+
+.btn-primary.btn-custom {
+    background-color: #19cda9;
+    color: #fff;
+    border: none;
+}
+
+.btn-primary.btn-custom:hover {
+    background-color: #17b295;
+}
+
+/* Form Control */
+.form-control:focus {
+    outline: none;
+    border-color: #19cda9;
+}
+
+.form-control:focus::placeholder {
+    color: transparent;
+}
+
+/* ----- Responsive Styles ----- */
+@media (max-width: 1200px) {
+    .user-info-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .user-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .user-details {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .user-name {
+        font-size: 1.4rem;
+    }
+
+    .join-date {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .custom-table th, .custom-table td {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .btn-primary, .btn-edit {
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-table th, .custom-table td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .user-info-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .user-details {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .user-name {
+        font-size: 1.3rem;
+    }
+
+    .join-date {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary, .btn-edit {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .user-name {
+        font-size: 1.2rem;
+    }
+
+    .custom-table th, .custom-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .btn-primary, .btn-edit {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+
+    .user-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .user-details {
+        text-align: center;
+    }
+}
+
+/* Modal styling */
+.modal-dialog {
+    max-width: 60%;  /* Giảm chiều rộng tối đa của dialog */
+    margin: 30px auto;  /* Căn giữa và tạo khoảng cách từ trên */
+}
+
+.modal-content {
+    border-radius: 0.5rem;  /* Bo tròn các góc */
+    padding: 20px;
+}
+
+.modal-header {
+    background-color: #19cda9;
+    color: white;
+    padding: 1rem;
+}
+
+.modal-title {
+    font-size: 1.6rem;
+}
+
+.modal-body {
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.modal-body .form-group label {
+    font-size: 1rem;
+}
+
+.modal-body .form-control {
+    font-size: 1rem;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-footer .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+}
+
+/* Điều chỉnh cho màn hình nhỏ hơn (Điện thoại di động) */
+@media (max-width: 480px) {
+    .modal-dialog {
+        max-width: 90%;  /* Đảm bảo dialog không quá lớn trên điện thoại */
+    }
+
+    .modal-header {
+        padding: 0.8rem;
+    }
+
+    .modal-title {
+        font-size: 1.4rem;
+    }
+
+    .modal-body {
+        font-size: 0.9rem;
+    }
+
+    .modal-body .form-control {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    .modal-footer .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Điều chỉnh cho tablet */
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 70%;
+    }
+
+    .modal-body {
+        font-size: 1rem;
+    }
+
+    .modal-footer .btn {
+        font-size: 1rem;
+    }
+}

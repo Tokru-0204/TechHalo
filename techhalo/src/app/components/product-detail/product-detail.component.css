@@ -1,0 +1,170 @@
+
+.ps-breadcrumb {
+  background-color: #fff !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  color: #d3d3d3;
+}
+.full {
+  color: orange;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.ps-product__thumbnail {
+  margin-right: 50px;
+}
+/* image */
+.main-image {
+  display: block;
+  width: 100%;
+  max-width: 450px; /* Set a consistent width */
+  height: 480px; /* Fixed height to ensure uniform display */
+  margin: 0 auto 20px; /* Center the main image */
+  border-radius: 10px;
+  object-fit: contain; /* Ensure the whole image fits within the container */
+  object-position: center; /* Center the image within the container */
+  /* box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; */
+}
+
+.main-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Thumbnail Gallery */
+.ps-product__gallery {
+  display: flex;
+  justify-content: center; /* Center thumbnails */
+  align-items: center;
+  gap: 12px; /* Space between thumbnails */
+  margin: 10px auto; /* Center gallery and add margin */
+  max-width: 500px; /* Match the main image width */
+  overflow-x: auto; /* Allow horizontal scroll if necessary */
+  padding: 5px;
+  padding-bottom: 15px;
+}
+
+.ps-product__gallery .item {
+  flex: 0 0 auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent; /* Default border */
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.ps-product__gallery .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure thumbnails fit inside their containers */
+  object-position: center;
+}
+
+.ps-product__gallery .item:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  /* border-color: #555;  */
+}
+
+.ps-product__gallery .item.selected {
+  border-color: #555; 
+}
+
+.ps-product__gallery::-webkit-scrollbar {
+  height: 6px;
+}
+
+.ps-product__gallery::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.ps-product__gallery::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+.ps-product__gallery .item {
+  flex: 0 0 auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent; /* Default border */
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.ps-product__gallery .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.ps-product__gallery .item.selected {
+  border-color: #555; 
+}
+.ps-product__shopping {
+  display: flex;
+  flex-direction: column; /* Đặt phần tử con theo chiều dọc */
+  align-items: flex-start; /* Căn trái */
+}
+
+.ps-product__actions {
+  display: flex;
+  align-items: center; /* Căn giữa icon trái tim và số lượt thích */
+  margin-bottom: 10px; /* Khoảng cách giữa icon và nút "Thêm Giỏ Hàng" */
+}
+
+.ps-product__actions i {
+  margin-right: 10px; /* Khoảng cách giữa trái tim và số lượt thích */
+}
+/* Hiệu ứng nhấp nháy màu đỏ và trắng, chỉ bo viền dày quanh trái tim */
+.heart-icon {
+  transition: transform 0.3s ease, color 0.3s ease, border 0.3s ease; /* Thêm transition cho border */
+}
+
+/* Hiệu ứng khi hover vào trái tim */
+.heart-icon:hover {
+  animation: colorChange 1.2s infinite; /* Thêm animation màu và viền */
+  
+
+}
+
+/* Animation cho nhấp nháy màu */
+@keyframes colorChange {
+  0% { 
+    color: #ffffff; /* Màu đỏ ban đầu */
+    filter: drop-shadow(0 0 5px #ed3333); 
+  }      
+  50% { 
+    color: #ed3333; /* Màu trắng giữa */
+    filter: drop-shadow(0 0 5px #ffffff); /* Hiệu ứng bóng đổ */
+  }        
+  100% { 
+    color: #ffffff; /* Màu đỏ quay lại */
+    filter: drop-shadow(0 0 5px #ed3333); /* Hiệu ứng bóng đổ */
+  }    
+}
+
+/* Animation cho phình lên xẹp xuống */
+@keyframes pulse {
+  0% { transform: scale(1); }  /* Kích thước ban đầu */
+  50% { transform: scale(2); } /* Phóng to lên */
+  100% { transform: scale(1); } /* Quay lại kích thước ban đầu */
+}
+
+.gray-italic-text {
+  color: gray;
+  font-style: italic;
+}
+

@@ -1,0 +1,75 @@
+<main class="ps-page--my-account">
+    <div class="ps-breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a [routerLink]="['/home']">Trang chủ</a></li>
+                <li><a [routerLink]="['/profile']">Tài khoản</a></li>
+                <li>Lịch sử đặt hàng</li>
+            </ul>
+        </div>
+    </div>
+    <section class="ps-section--account">
+        <div class="container">
+                <div class="col-lg-12">
+                        <div class="ps-section--account-setting">
+                            <div class="ps-section__header">
+                                <h1>Lịch sử đặt hàng</h1>
+                            </div>
+                            <div class="ps-section__content">
+                                <div class="table-responsive">
+                                    <table class="table ps-table ps-table--invoices">
+                                        <thead>
+                                            <tr>
+                                                <th>STT</th>
+                                                <th>Ngày đặt</th>
+                                                <th>Tổng tiền</th>
+                                                <th>Địa chỉ</th>
+                                                <th>Số điện thoại</th>
+                                                <th>Hình thức thanh toán</th>
+                                                <th>Trạng thái</th>
+                                                <th>Hành động</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of orders | paginate: { itemsPerPage: 5, currentPage: page}, index as i">
+                                                <td>{{i+1}}</td>
+                                                <td style="width: 15%;">{{ item.orderDate | date: 'HH:mm - dd/MM/yyyy' }}</td>
+                                                <td>{{item.amount|currencyVietnam}}</td>
+                                                <td>{{item.address}}</td>
+                                                <td  style="width: 9%;">{{item.phone}}</td>
+                                                <td>{{item.paymentMethod==0?"Khi Nhận Hàng":"Chuyển Khoản"}}</td>
+                                                <td style="width: 10%;">{{item.status==0?"Chờ xác nhận":item.status==1?"Đã xác nhận":item.status==2?"Đang giao hàng":item.status==3?"Đã thanh toán":item.status==4?"Đã giao hàng":"Đã huỷ"}}</td>
+                                                <td style="width: 8%; text-align: center;" >
+                                                    <app-order-detail [id]="item.ordersId" style="padding-right: 10px;"></app-order-detail>
+                                                    <button 
+                                                    class="btn btn-danger btn-sm" 
+                                                    [disabled]="item.status !== 0" 
+                                                    [title]="item.status === 0 ? 'Huỷ đơn' : 'Không thể huỷ đơn này'"
+                                                    (click)="cancel(item.status === 0 ? item.ordersId : -1)"
+                                                    style="cursor: pointer;">
+                                                    Hủy đơn
+                                                </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-lg-12" style="margin-top: 7px;">
+                                            <ul>
+                                                <pagination-controls
+                                                    (pageChange)="page = $event"
+                                                    previousLabel=""
+                                                    nextLabel=""
+                                                    class="text-center my-page">
+                                                </pagination-controls>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>          
+                </div>
+        </div>
+    </section>
+   
+</main>

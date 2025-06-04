@@ -1,0 +1,32 @@
+/* Main image styling */
+.main-image-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Thumbnail images styling */
+.image-wrapper {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.product-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.acen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

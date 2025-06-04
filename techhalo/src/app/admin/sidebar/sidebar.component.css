@@ -1,0 +1,27 @@
+.nav-item.active .nav-link {
+    color: white;
+}
+.sidebar .nav-item .nav-link {
+    font-size: 14px; /* Tăng kích thước chữ nếu cần */
+    width: 100%; /* Độ rộng của menu */
+}
+
+.sidebar .sidebar-heading {
+    font-size: 16px; /* Tăng kích thước tiêu đề nếu cần */
+}
+/* .navbar-nav .nav-link span {
+    white-space: nowrap; 
+} */
+
+.navbar-nav .nav-link i {
+    margin-right: 5px; /* Thêm khoảng cách giữa icon và chữ */
+    
+}
+.sidebar {
+    width: 180px !important;/* Thêm hiệu ứng chuyển đổi mượt */
+}
+
+.sidebar .nav-item .nav-link span{
+    font-size: 11px; 
+    font-weight: 300;
+}

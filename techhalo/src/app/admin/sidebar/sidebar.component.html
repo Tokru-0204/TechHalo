@@ -1,0 +1,120 @@
+<ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar" style="padding-top: 20px;">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" (click)="setPage('dashboard')" [routerLink]="['/admin/dashboard']">
+        <div class="sidebar-brand-icon rotate-n-15"></div>
+        <a class="ps-logo"><img src="img/logo_new4.svg" style="margin-top: -16px;"></a>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item" [ngClass]="{'active': pageActive === 'dashboard'}">
+        <a class="nav-link" (click)="setPage('dashboard')" [routerLink]="['/admin/dashboard']">
+            <i class="fas fa-fw fa-tachometer-alt" style="font-size: 12px;"></i>
+            <span class="text">Trang chủ</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">Quản lý</div>
+
+    <!-- Nav Item - Customer -->
+  <!-- Nav Item - Customer -->
+    <li class="nav-item"  [ngClass]="{'active': pageActive === 'customer'}">
+        <a class="nav-link" (click)="setPage('customer')" [routerLink]="['/admin/customer']" >
+            <i class="fas fa-user fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Tài Khoản</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Order -->
+    <li class="nav-item" [ngClass]="{'active': pageActive === 'order'}">
+        <a class="nav-link" (click)="setPage('order')" [routerLink]="['/admin/order']">
+            <i class="fas fa-shopping-bag fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Đơn hàng</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Product -->
+    <li class="nav-item" [ngClass]="{'active': pageActive === 'product'}">
+        <a class="nav-link" (click)="setPage('product')" [routerLink]="['/admin/product']">
+            <i class="fas fa-table fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Sản phẩm</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Category -->
+    <li class="nav-item" *ngIf="isRoleAllowed(['ROLE_ADMIN'])" [ngClass]="{'active': pageActive === 'category'}">
+        <a class="nav-link" (click)="setPage('category')" [routerLink]="['/admin/category']">
+            <i class="fas fa-cubes fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Loại sản phẩm</span>
+        </a>
+    </li>
+
+   <!-- Nav Item - Supplier -->
+   <li class="nav-item" *ngIf="isRoleAllowed(['ROLE_ADMIN'])" [ngClass]="{'active': pageActive === 'supplier'}">
+        <a class="nav-link" (click)="setPage('supplier')" [routerLink]="['/admin/supplier']">
+        <i class="fas fa-industry fa-chart-area" style="font-size: 12px;"></i>
+        <span class="text">Nhà cung cấp</span>
+        </a>
+    </li>
+      <!-- Nav Item - Purchase Order -->
+      <li class="nav-item" *ngIf="isRoleAllowed(['ROLE_ADMIN'])" [ngClass]="{'active': pageActive === 'purchase-order'}">
+        <a class="nav-link" (click)="setPage('purchase-order')" [routerLink]="['/admin/purchase-order']">
+            <i class="fas fa-th-list fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Nhập hàng</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Rate -->
+    <li class="nav-item" [ngClass]="{'active': pageActive === 'rate'}">
+        <a class="nav-link" (click)="setPage('rate')" [routerLink]="['/admin/rate']">
+            <i class="fas fa-star-half-alt" style="font-size: 12px;"></i>
+            <span class="text">Đánh giá</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Promotion -->
+    <li class="nav-item" *ngIf="isRoleAllowed(['ROLE_ADMIN'])" [ngClass]="{'active': pageActive === 'promotion'}">
+        <a class="nav-link" (click)="setPage('promotion')" [routerLink]="['/admin/promotion']">
+            <i class="fas fa-percent" style="font-size: 12px;"></i>
+            <span class="text">Quản lý Khuyến mãi</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr *ngIf="isRoleAllowed(['ROLE_ADMIN'])" class="sidebar-divider">
+
+    <!-- Heading -->
+    <div *ngIf="isRoleAllowed(['ROLE_ADMIN'])"class="sidebar-heading">Thống kê</div>
+
+    <!-- Nav Item - Category Best Seller -->
+    <li class="nav-item" *ngIf="isRoleAllowed(['ROLE_ADMIN'])" [ngClass]="{'active': pageActive === 'category-best-seller'}">
+        <a class="nav-link" (click)="setPage('category-best-seller')" [routerLink]="['/admin/statistical-category']">
+            <i class="fas fa-fw fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Danh mục bán chạy</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Soldest -->
+    <li class="nav-item" *ngIf="isRoleAllowed(['ROLE_ADMIN'])" [ngClass]="{'active': pageActive === 'soldest'}">
+        <a class="nav-link" (click)="setPage('soldest')" [routerLink]="['/admin/soldest']">
+            <i class="fas fa-fw fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Sản phẩm bán chạy</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Inventory -->
+    <li class="nav-item" *ngIf="isRoleAllowed(['ROLE_ADMIN'])" [ngClass]="{'active': pageActive === 'inventory'}">
+        <a class="nav-link" (click)="setPage('inventory')" [routerLink]="['/admin/inventory']">
+            <i class="fas fa-fw fa-chart-area" style="font-size: 12px;"></i>
+            <span class="text">Hàng tồn kho</span>
+        </a>
+    </li>
+
+</ul>

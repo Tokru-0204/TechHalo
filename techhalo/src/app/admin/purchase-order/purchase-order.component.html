@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Danh sách nhập hàng</h1>
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-12">
+            <mat-form-field>
+                <mat-label>Tìm kiếm</mat-label>
+                <input matInput type="text" (keyup)="search($event);" />
+            </mat-form-field>            
+            <button mat-raised-button color="primary" class="ml-3" style="float: right;" (click)="exporter.exportTable('csv', {fileName:'Danh sách hàng nhập'})">Xuất Excel</button>
+            <app-add-purchase-order style="float: right;" (saveFinish)="finish()"></app-add-purchase-order>
+        </div>
+        <div class="col-12">
+            <table mat-table matTableExporter #exporter="matTableExporter" [hiddenColumns]="[2,3]" [dataSource]="listData" matSort class="mat-elevation-z8">
+               <!-- <ng-container matColumnDef="purchaseOrderId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 15%;">Mã nhập hàng</th>
+                <td mat-cell *matCellDef="let row">{{ row.purchaseOrderId }}</td>
+            </ng-container> -->
+
+            <!-- Cột: Tên nhà cung cấp -->
+            <ng-container matColumnDef="supplier">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 25%;">Nhà cung cấp</th>
+                <td mat-cell *matCellDef="let row">{{ row.supplier.name }}</td>
+            </ng-container>
+
+            <!-- Cột: Ngày tạo -->
+            <ng-container matColumnDef="create_at">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 20%;">Ngày nhập hàng</th>
+                <td mat-cell *matCellDef="let row">{{ row.createAt_purchaseOrder | date: 'HH:mm - dd/MM/yyyy' }}</td>
+            </ng-container>
+
+            <!-- Cột: Ngày cập nhật -->
+            <ng-container matColumnDef="update_at">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header style="width: 20%;">Ngày cập nhật</th>
+                <td mat-cell *matCellDef="let row">{{ row.updateAt_purchaseOrder |date: 'HH:mm - dd/MM/yyyy'}}</td>
+            </ng-container>
+            <ng-container matColumnDef="view">
+                <th mat-header-cell *matHeaderCellDef style="width: 10%; text-align: center;">Chi tiết</th>
+                <td mat-cell *matCellDef="let row" style="text-align: center;">
+                    <!-- Truyền supplierId từ PurchaseOrder xuống PurchaseOrderDetail -->
+                    <app-purchase-order-detail 
+                        [selectedSupplierId]="row.supplier.supplierId">
+                    </app-purchase-order-detail>
+                </td>
+            </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columns"></tr>
+                <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+            </table>
+            <mat-paginator [length]="purchaseOrdersLength" [pageSize]="8" showFirstLastButtons [pageSizeOptions]="[8, 25, 50, 100]">
+            </mat-paginator>
+        </div>
+    </div>
+    
+</div>

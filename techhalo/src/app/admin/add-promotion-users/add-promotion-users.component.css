@@ -1,0 +1,112 @@
+.scrollable-user-list {
+    max-height: 100px;
+    min-height: 100px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.form-check {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-check:hover {
+    background-color: #f0f0f0;
+}
+
+.form-check-input {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.form-check-label {
+    flex: 1;
+}
+
+.section-divider {
+    margin: 15px 0;
+    border-top: 1px solid #ddd;
+}
+
+.applied-users-section {
+    margin-top: 10px;
+}
+
+.applied-users-list {
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.applied-user-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.user-name {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.applied-user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between name and delete button */
+    margin-bottom: 8px;
+}
+
+.user-name {
+    flex-grow: 1; /* Allows name to take up remaining space */
+}
+
+.delete-button {
+    margin-left: auto; /* Pushes button to the far right */
+}
+
+/* Khung chứa người dùng được áp dụng mã giảm giá */
+.applied-users-list {
+    max-height: 160px;
+    min-height: 160px; /* Đảm bảo khung có chiều cao cố định */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9; /* Màu nền của khung */
+}
+
+/* Định dạng từng người dùng được áp dụng */
+.applied-user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Giãn cách tên người dùng và nút xóa */
+    margin-bottom: 8px;
+}
+
+/* Tên người dùng */
+.user-name {
+    flex-grow: 1; /* Cho phép tên chiếm không gian còn lại */
+    font-weight: 500;
+}
+
+/* Nút xóa */
+.delete-button {
+    margin-left: auto; /* Đẩy nút xóa sang bên phải */
+    background-color: #dc3545; /* Màu đỏ */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Hover hiệu ứng nút xóa */
+.delete-button:hover {
+    background-color: #c82333; /* Tối hơn khi hover */
+}

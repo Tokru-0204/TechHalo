@@ -1,0 +1,235 @@
+.ps-breadcrumb {
+  background-color: #fff !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ps-section--account-setting {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+.ps-table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.ps-table th, .ps-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #333;
+}
+
+.ps-table th {
+  background-color: #fafafa;
+  color: #555;
+  font-weight: 600;
+}
+
+/* Header Styles */
+.ps-section__header h1 {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.ps-widget__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Profile Image */
+.ps-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ps-image:hover {
+  transform: scale(1.1);
+}
+
+/* Button Styles */
+.ps-btn, .profile-actions .btn {
+  padding: 10px 20px;
+  background-color: #19cda9;
+  color: white;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.ps-btn:hover, .profile-actions .btn:hover {
+  background-color: #17b295;
+  transform: translateY(-3px);
+}
+
+.ps-btn:disabled, .profile-actions .btn:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+
+.my-page /deep/ .ngx-pagination li {
+  margin: 0 5px;
+}
+
+.my-page /deep/ .ngx-pagination li a {
+  padding: 8px 16px;
+  background-color: rgba(212, 212, 212, 0.3);
+  border-radius: 30px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.my-page /deep/ .ngx-pagination li a:hover {
+  background-color: #19cda9;
+  color: #fff;
+}
+.my-page /deep/ .ngx-pagination {
+  margin: auto !important;
+}
+
+.my-page /deep/ .ngx-pagination .current {
+  padding: 0px;
+}
+.my-page /deep/ .ngx-pagination .current span {
+  padding: 7px 16px !important;
+  background-color: #19cda9 !important;
+  border-radius: 10%;
+}
+
+/* Form Styles */
+/* .ps-form--newsletter {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+} */
+
+.ps-form__left {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.ps-form__right .form-group--nest {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ps-form__right .form-control {
+  width: 70%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.ps-form__right .form-control:focus {
+  border-color: #19cda9;
+}
+
+.ps-form__right .ps-btn {
+  padding: 12px 20px;
+  background-color: #19cda9;
+  color: white;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.ps-form__right .ps-btn:hover {
+  background-color: #17b295;
+  transform: translateY(-3px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .ps-section--account-setting {
+      padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .ps-table td, .ps-table th {
+      padding: 8px;
+      font-size: 12px;
+  }
+
+  .ps-form__right .form-control {
+      width: 60%;
+  }
+
+  .ps-form__right .ps-btn {
+      width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ps-form__right .form-control {
+      width: 70%;
+  }
+
+  .ps-form__right .ps-btn {
+      width: 28%;
+  }
+}
+
+@media (max-width: 576px) {
+  .ps-page--my-account {
+      padding: 10px;
+  }
+
+  .ps-table {
+      font-size: 11px;
+  }
+
+  .ps-form__right .ps-btn {
+      width: 100%;
+      padding: 10px 20px;
+  }
+
+  .ps-form__right .form-control {
+      width: 100%;
+      padding: 10px;
+  }
+}
+
+/* Style for button icon */
+.btn i {
+  margin-right: 5px; /* Space between icon and text */
+}
+
+/* Additional styling for the cancel button */
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Hover effects for button */
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+/* Disabled state for buttons */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

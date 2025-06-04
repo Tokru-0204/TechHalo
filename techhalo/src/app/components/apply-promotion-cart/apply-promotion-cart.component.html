@@ -1,0 +1,42 @@
+<div class="modal-content">
+  <div class="modal-header">
+      <h4 class="modal-title">Áp Dụng Mã Giảm Giá</h4>
+      <button class="close-btn" (click)="onClose()">×</button>
+  </div>
+  <div class="modal-body">
+      <div *ngIf="availablePromotions.length === 0" class="no-promotion-message">
+          <p>Không có mã giảm giá nào sẵn có cho bạn.</p>
+      </div>
+      <div *ngIf="availablePromotions.length > 0">
+          <div class="promotion-card" *ngFor="let promotion of availablePromotions">
+              <div class="promotion-header">
+                  <h5 class="promotion-code">{{ promotion.code }}</h5>
+                  <span class="promotion-expiry">HSD: {{ formatDate(promotion.endDate) }}</span>
+              </div>
+              <p class="promotion-description">{{ promotion.description }}</p>
+              <div class="promotion-row">
+                <p style="color: rgb(241, 18, 18); padding-top: 23px;">
+                    Giảm giá: 
+                    <strong *ngIf="promotion.type === 'percentage'">{{ promotion.discount }}%</strong>
+                    <strong *ngIf="promotion.type === 'fixed'">{{ promotion.discount | currencyVietnam }}</strong>
+                  </p>
+              <div class="promotion-footer">
+                  <button 
+                      *ngIf="!isPromotionApplied(promotion)"
+                      class="apply-btn" 
+                      (click)="onApplyPromotion(promotion)">
+                      Áp dụng
+                  </button>
+                  <span *ngIf="isPromotionApplied(promotion)" class="applied-text">Đã áp dụng</span>
+              </div>
+            </div>
+              <p *ngIf="invalidPromotionId === promotion.promotionCodeId" class="error-message">
+                  Mã giảm giá không thể áp dụng!
+              </p>
+          </div>
+      </div>
+  </div>
+  <div class="modal-footer">
+      <!-- <button class="close-modal-btn" (click)="onClose()">Đóng</button> -->
+  </div>
+</div>

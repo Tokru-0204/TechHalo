@@ -1,0 +1,77 @@
+.ps-breadcrumb {
+  background-color: #fff !important;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);  
+}
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 5rem;
+  color: #d3d3d3;
+}
+.full {
+  color: #19cda9;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #19cda9;
+}
+
+.my-page /deep/ .ngx-pagination {
+  margin: auto !important;
+}
+
+.my-page /deep/ .ngx-pagination .current {
+  padding: 0px;
+}
+
+.my-page /deep/ .ngx-pagination .current span {
+  padding: 7px 16px !important;
+  background-color: #19cda9 !important;
+  border-radius: 10%;
+}
+
+.my-page /deep/ .ngx-pagination li {
+  margin: 4px;
+}
+
+.my-page /deep/ .ngx-pagination li a {
+  padding: 7px 16px !important;
+  background-color: rgba(212, 212, 212, 0.233);
+  border-radius: 10%;
+}
+
+
+/* Định dạng mặc định cho link */
+.ps-list--categories li a {
+  color: #333; 
+  text-decoration: none; 
+  position: relative; 
+  padding: 5px 10px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Đường gạch chân khi hover - bắt đầu ẩn */
+.ps-list--categories li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; /* Độ dày của đường gạch */
+  background-color: #19cda9; /* Màu của đường gạch */
+  transform: scaleX(0); /* Bắt đầu với độ rộng bằng 0 */
+  transform-origin: left; /* Gốc bắt đầu chạy từ trái sang phải */
+  transition: transform 0.3s ease; /* Hiệu ứng mượt khi chạy */
+}
+
+/* Hover - đổi màu chữ và hiển thị đường gạch chân */
+.ps-list--categories li a:hover {
+  color: #19cda9; /* Màu chữ khi hover */
+}
+
+.ps-list--categories li a:hover::after {
+  transform: scaleX(1); /* Đường gạch chạy qua toàn bộ chữ */
+}

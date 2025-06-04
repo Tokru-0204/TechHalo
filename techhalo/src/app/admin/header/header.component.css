@@ -1,0 +1,11 @@
+.text-gray-600 {
+    color: #6f7579; /* Xám đậm */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+.text-gray-500 {
+    color: #818486; /* Xám nhạt */
+    font-size: 1.0rem;
+}

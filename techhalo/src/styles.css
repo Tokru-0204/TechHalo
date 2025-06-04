@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Đảm bảo không có phần tử nào vượt ra ngoài màn hình */
+html, body {
+    width: 100%;
+}
+
+/* Đảm bảo các phần tử không vượt quá màn hình */
+* {
+    box-sizing: border-box;  /* Đảm bảo padding và border không làm tăng chiều rộng */
+}
+

@@ -1,0 +1,113 @@
+<main class="ps-page--my-account">
+    <div class="ps-breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a [routerLink]="['/home']">Trang chủ</a></li>
+                <li><a [routerLink]="['/profile']">Tài khoản</a></li>
+                <li>Tài khoản cá nhân</li>
+            </ul>
+        </div>
+    </div>
+    <section class="ps-section--account">
+        <div class="container">
+            <aside class="ps-widget--account-dashboard">
+                <div class="ps-widget__header">
+                    <!-- Đưa hình ảnh lên trên -->
+                    <img [src]="customer.image" alt="" />
+                    <figure>
+                        <p>Tên: <span style="color: #09c;">{{customer.name}}</span></p>
+                        <p>Tham gia: <span>{{customer.registerDate | date:'dd-MM-yyy'}}</span></p>
+                    </figure>
+                </div>
+                <!-- Đảm bảo phần này nằm dưới header -->
+                <div class="ps-widget__content">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><i class="icon-user"></i> {{customer.email}}</a>
+                            <a href="javascript:void(0);"><i class="icon-papers"></i> {{customer.phone}}</a>
+                            <a href="javascript:void(0);"><i class="icon-user"></i> {{customer.gender ? 'Nam' : 'Nữ'}}</a>
+                            <a href="javascript:void(0);"><i class="icon-map-marker"></i> {{customer.address}}</a>
+                            <a href="javascript:void(0);"><i class="icon-store"></i>Đã giao dịch: {{done}} đơn</a>
+                        </li>
+                    </ul>
+
+                    <div class="profile-actions">
+                        <button class="btn btn-primary" (click)="openEditModal()">Chỉnh sửa thông tin</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+  <!-- Modal chỉnh sửa -->
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title m-0">Chỉnh sửa thông tin cá nhân</h4>
+    </div>
+  
+    <div class="modal-body p-4">
+      <form [formGroup]="profileForm" class="row">
+        <input type="hidden" formControlName="status">
+        
+        <!-- Thông tin người dùng -->
+        <div class="col-6">
+          <div class="form-group">
+            <label for="name">Tên người dùng:</label>
+            <input type="text" id="name" [ngClass]="{'is-invalid': profileForm.get('name')?.touched && profileForm.get('name')?.invalid}" class="form-control" formControlName="name">
+            <div *ngIf="profileForm.get('name')?.touched && profileForm.get('name')?.invalid" class="invalid-feedback">
+              Tên không hợp lệ
+            </div>
+          </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" [ngClass]="{'is-invalid': profileForm.get('email')?.touched && profileForm.get('email')?.invalid}" class="form-control" formControlName="email">
+                        <div *ngIf="profileForm.get('email')?.touched && profileForm.get('email')?.invalid" class="invalid-feedback">
+                            Email không hợp lệ
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mật khẩu:</label>
+                        <input type="password" id="password" [ngClass]="{'is-invalid': profileForm.get('password')?.touched && profileForm.get('password')?.invalid}" class="form-control" formControlName="password">
+                        <div *ngIf="profileForm.get('password')?.touched && profileForm.get('password')?.invalid" class="invalid-feedback">
+                            Mật khẩu không hợp lệ
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address" [ngClass]="{'is-invalid': profileForm.get('address')?.touched && profileForm.get('address')?.invalid}" class="form-control" formControlName="address">
+                        <div *ngIf="profileForm.get('address')?.touched && profileForm.get('address')?.invalid" class="invalid-feedback">
+                            Địa chỉ không hợp lệ
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="text" id="phone" [ngClass]="{'is-invalid': profileForm.get('phone')?.touched && profileForm.get('phone')?.invalid}" class="form-control" formControlName="phone">
+                        <div *ngIf="profileForm.get('phone')?.touched && profileForm.get('phone')?.invalid" class="invalid-feedback">
+                            Số điện thoại không hợp lệ
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Giới tính:</label>
+                        <select class="form-control" id="gender" formControlName="gender">
+                            <option value="true">Nam</option>
+                            <option value="false">Nữ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6 text-center">
+                    <p style="color: black; font-size: 1.6rem;">Ảnh đại diện</p>
+                    <img [src]="image" style="width: 150px; height: 150px; object-fit: cover;" class="img-fluid rounded-circle mt-3 mb-3" alt="Ảnh đại diện">
+                    <div class="custom-file" style="width: 80%;">
+                        <input type="file" class="custom-file-input" id="customFile" (change)="onFileChange($event)">
+                        <!-- <label class="custom-file-label" for="customFile">Chọn ảnh</label> -->
+                    </div>
+                </div>
+                <!-- Các nút hành động -->
+                <div class="col-12 text-right">
+                    <button type="submit" class="btn btn-primary btn-custom" [disabled]="profileForm.invalid" (click)="updateProfile()" style="margin-right: 10px;">Lưu</button>
+                    <button type="button" class="btn btn-secondary btn-custom" (click)="d('Cancel click')">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </ng-template>
+</main>

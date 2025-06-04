@@ -1,0 +1,72 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h2 class="modal-title m-0">Cập nhật thông tin nhà cung cấp</h2>
+    </div>
+    <div class="modal-body p-4">
+        <form [formGroup]="postForm">
+            <!-- Hidden field cho ID nhà cung cấp -->
+            <input type="hidden" formControlName="supplierId">
+
+            <!-- Tên nhà cung cấp -->
+            <div class="form-group mb-3">
+                <label for="name" class="form-label">Tên nhà cung cấp:</label>
+                <input type="text" class="form-control" id="name" placeholder="Tên nhà cung cấp" 
+                       [ngClass]="{'is-invalid': postForm.get('name')?.touched && postForm.get('name')?.invalid}" 
+                       formControlName="name">
+                <small class="invalid-feedback">Hãy nhập tên nhà cung cấp</small>
+            </div>
+
+            <!-- Địa chỉ -->
+            <div class="form-group mb-3">
+                <label for="address" class="form-label">Địa chỉ:</label>
+                <input type="text" class="form-control" id="address" placeholder="Địa chỉ" 
+                       [ngClass]="{'is-invalid': postForm.get('address')?.touched && postForm.get('address')?.invalid}" 
+                       formControlName="address">
+                <small class="invalid-feedback">Hãy nhập địa chỉ hợp lệ</small>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" 
+                       [ngClass]="{'is-invalid': postForm.get('email')?.touched && postForm.get('email')?.invalid}" 
+                       formControlName="email">
+                <small class="invalid-feedback">Hãy nhập email đúng định dạng</small>
+            </div>
+
+            <!-- Số điện thoại -->
+            <div class="form-group mb-3">
+                <label for="phone" class="form-label">Số điện thoại:</label>
+                <input type="text" class="form-control" id="phone" placeholder="Số điện thoại" 
+                       [ngClass]="{'is-invalid': postForm.get('phone')?.touched && postForm.get('phone')?.invalid}" 
+                       formControlName="phone">
+                <small class="invalid-feedback">Số điện thoại phải có 10-11 chữ số</small>
+            </div>
+
+            <!-- Ngày tạo -->
+            <div class="form-group mb-3">
+                <label for="create_at" class="form-label">Ngày tạo:</label>
+                <input type="date" class="form-control" id="create_at" formControlName="create_at" readonly>
+            </div>
+            <div class="form-group text-center">
+                <h3>Hình ảnh nhà cung cấp</h3>
+                <div class="image-container">
+                  <div class="main-image-wrapper">
+                    <img [src]="image" class="img-fluid main-image" alt="Hình ảnh nhà cung cấp">
+                  </div>
+                  <div class="custom-file col-4 mt-2">
+                    <input type="file" class="custom-file-input" id="imageFile" (change)="onFileSelect($event)">
+                    <label class="custom-file-label form-control" for="imageFile">Chọn ảnh</label>
+                  </div>
+                </div>
+                <!-- Nút cập nhật -->
+            <button mat-raised-button color="primary" [disabled]="postForm.invalid" (click)="update()">Cập nhật</button>
+            </div>
+
+            
+        </form>
+    </div>
+</ng-template>
+
+<!-- Nút mở modal -->
+<a style="color: steelblue; cursor: pointer;" (click)="open(content)"><i class="fas fa-edit"></i></a>

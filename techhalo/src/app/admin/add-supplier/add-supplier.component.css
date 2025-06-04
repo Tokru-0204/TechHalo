@@ -1,0 +1,18 @@
+.image-container {
+    display: flex; /* Kích hoạt Flexbox */
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    margin: 20px 0; /* Khoảng cách giữa container và các phần tử khác */
+  }
+  
+  .main-image-wrapper {
+    max-width: 200px; /* Kích thước ảnh tối đa */
+    margin-bottom: 10px; /* Khoảng cách giữa ảnh và nút chọn file */
+  }
+  
+  .main-image {
+    width: 100%; /* Ảnh chiếm toàn bộ chiều rộng container */
+    object-fit: contain; /* Duy trì tỷ lệ ảnh */
+  }
+  
