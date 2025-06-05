@@ -87,5 +87,5 @@ ng serve
 
 3. Cổng truy cập backend mặc định:
 
-➡️ [http://localhost:4200](http://localhost:8080)
+➡️ [http://localhost:8080](http://localhost:8080)
 
