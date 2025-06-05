@@ -1,6 +1,6 @@
-# 📌 Tên Dự Án
+# 📌 Laptop E-Commerce Website (Fullstack)
 
-> Một mô tả ngắn gọn, súc tích (1-2 câu) về mục đích của dự án và giá trị mang lại.
+> Một dự án website bán hàng máy tính TechHalo áp dụng nhiều công nghệ mới hỗ trợ chủ sở hữu quản lý, cũng nhưng cải thiện trải nghiệm người dùng.
 
 ---
 
@@ -11,6 +11,10 @@
 ---
 
 ## 📷 Screenshots
+
+## 🎬 Video demo
+
+[![Watch the demo](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)]([https://www.youtube.com/watch?v=VIDEO_ID](https://youtu.be/xab75wW7rB4))
 
 > Một vài ảnh minh họa tính năng hoặc giao diện chính.
 
