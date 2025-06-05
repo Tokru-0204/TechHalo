@@ -56,7 +56,7 @@
 
 ## ⚙️ Cài đặt & chạy thử
 
-### Frontend
+### Frontend:
 
 1. Cài đặt các package:
 
