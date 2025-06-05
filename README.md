@@ -14,7 +14,8 @@
 
 ## 🎬 Video demo
 
-([https://www.youtube.com/watch?v=VIDEO_ID](https://youtu.be/xab75wW7rB4))
+[![Watch the demo](https://img.youtube.com/vi/xab75wW7rB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=xab75wW7rB4)
+
 
 > Một vài ảnh minh họa tính năng hoặc giao diện chính.
 
