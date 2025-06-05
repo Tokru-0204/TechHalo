@@ -4,10 +4,6 @@
 
 ---
 
-## 🎬 Video demo
-
-[![Watch the demo](https://img.youtube.com/vi/xab75wW7rB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=xab75wW7rB4)
-
 ## 📷 Giao diện trang web
 
 ### 🏠 Giao diện trang chủ
@@ -52,6 +48,11 @@
 - Spring Security + JWT  
 - MySQL, JPA (Hibernate)  
 ---
+
+## 🎬 Video demo
+
+[![Watch the demo](https://img.youtube.com/vi/xab75wW7rB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=xab75wW7rB4)
+
 
 ## ⚙️ Cài đặt & chạy thử
 
