@@ -4,6 +4,32 @@
 
 ---
 
+## 🧰 Công nghệ sử dụng
+
+### Frontend:
+
+- Angular (CLI 12+)  
+- Angular Material, SCSS  
+- RxJS, ngx-pagination, toastr, slick-carousel  
+- Chart.js, jsPDF, SweetAlert2  
+
+### Backend:
+
+- Java 17, Spring Boot 2  
+- Spring Security + JWT  
+- MySQL, JPA (Hibernate)
+  
+---
+## 🎯 Tính năng nổi bật
+
+- ✅ Đăng nhập/Đăng ký với JWT  
+- ✅ Phân quyền người dùng: Admin vs User  
+- ✅ Giỏ hàng, thanh toán, mã giảm giá  
+- ✅ CRUD sản phẩm, đơn hàng, thống kê  
+- ✅ Giao diện responsive & hiện đại  
+
+---
+
 ## 📷 Giao diện trang web
 
 ### 🏠 Giao diện trang chủ
@@ -21,32 +47,6 @@
 ### 📊 Giao diện Dashboard
 <img src="images/Picture5.png" width="600"/>
 
----
-
-## 🎯 Tính năng nổi bật
-
-- ✅ Đăng nhập/Đăng ký với JWT  
-- ✅ Phân quyền người dùng: Admin vs User  
-- ✅ Giỏ hàng, thanh toán, mã giảm giá  
-- ✅ CRUD sản phẩm, đơn hàng, thống kê  
-- ✅ Giao diện responsive & hiện đại  
-
----
-
-## 🧰 Công nghệ sử dụng
-
-### Frontend:
-
-- Angular (CLI 12+)  
-- Angular Material, SCSS  
-- RxJS, ngx-pagination, toastr, slick-carousel  
-- Chart.js, jsPDF, SweetAlert2  
-
-### Backend:
-
-- Java 17, Spring Boot 2  
-- Spring Security + JWT  
-- MySQL, JPA (Hibernate)  
 ---
 
 ## 🎬 Video demo
