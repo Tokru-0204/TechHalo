@@ -10,14 +10,20 @@
 
 ## 📷 Giao diện trang web
 
-### 🏠 Trang chủ
+### 🏠 Giao diện trang chủ
 ![](images/home.png)
 
-### 📊 Admin Dashboard
-![](images/admin.png)
+### 🛒 Giao diện trang cửa hàng
+![](images/store.png)
 
-### 🛍️ Trang sản phẩm
-![](images/product.png)
+### 📄 Giao diện trang chi tiết sản phẩm
+![](images/product-detail.png)
+
+### 💳 Giao diện trang thanh toán
+![](images/checkout.png)
+
+### 📊 Giao diện Dashboard
+![](images/admin-dashboard.png)
 
 ---
 
