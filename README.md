@@ -11,19 +11,19 @@
 ## 📷 Giao diện trang web
 
 ### 🏠 Giao diện trang chủ
-![](images/Picture1.png)
+<img src="images/Picture1.png" width="600"/>
 
 ### 🛒 Giao diện trang cửa hàng
-![](images/Picture2.png)
+<img src="images/Picture2.png" width="600"/>
 
 ### 📄 Giao diện trang chi tiết sản phẩm
-![](images/Picture3.png)
+<img src="images/Picture3.png" width="600"/>
 
 ### 💳 Giao diện trang thanh toán
-![](images/Picture4.png)
+<img src="images/Picture4.png" width="600"/>
 
 ### 📊 Giao diện Dashboard
-![](images/Picture5.png)
+<img src="images/Picture5.png" width="600"/>
 
 ---
 
