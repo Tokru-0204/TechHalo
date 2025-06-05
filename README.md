@@ -1,6 +1,6 @@
-# 📌 Website Quản Lý Bán Hàng Máy Tính TechHalo (Fullstack)
+# 📌 Website Quản Lý Bán Hàng Máy Tính TechHalo
 
-> Một dự án website bán hàng máy tính TechHalo. Dự án áp dụng nhiều công nghệ mới nhầm hỗ trợ chủ doanh nghiệp quản lý, cũng nhưng cải thiện trải nghiệm người dùng.
+> Dự án áp dụng nhiều công nghệ mới nhầm hỗ trợ chủ doanh nghiệp trong việc quản lý, cũng nhưng cải thiện trải nghiệm người dùng.
 
 ---
 
