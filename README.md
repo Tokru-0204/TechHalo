@@ -1,27 +1,23 @@
 # 📌 Laptop E-Commerce Website (Fullstack)
 
-> Một dự án website bán hàng máy tính TechHalo áp dụng nhiều công nghệ mới hỗ trợ chủ sở hữu quản lý, cũng nhưng cải thiện trải nghiệm người dùng.
+> Một dự án website bán hàng máy tính TechHalo. Dự án áp dụng nhiều công nghệ mới nhầm hỗ trợ chủ doanh nghiệp quản lý, cũng nhưng cải thiện trải nghiệm người dùng.
 
 ---
-
-## 🚀 Demo / Preview
-
-> (Tùy chọn) Link demo, video hoặc hình ảnh nổi bật về sản phẩm.
-
----
-
-## 📷 Screenshots
 
 ## 🎬 Video demo
 
 [![Watch the demo](https://img.youtube.com/vi/xab75wW7rB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=xab75wW7rB4)
 
+## 📷 Giao diện trang web
 
-> Một vài ảnh minh họa tính năng hoặc giao diện chính.
+### 🏠 Trang chủ
+![](images/home.png)
 
-| Trang chủ | Admin Dashboard | Trang sản phẩm |
-|----------|------------------|----------------|
-| ![](images/home.png) | ![](images/admin.png) | ![](images/product.png) |
+### 📊 Admin Dashboard
+![](images/admin.png)
+
+### 🛍️ Trang sản phẩm
+![](images/product.png)
 
 ---
 
