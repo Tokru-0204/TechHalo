@@ -7,7 +7,7 @@
 ## 📷 Giao diện trang web
 
 ### 🏠 Giao diện trang chủ
-<img src="images/Picture1.png" width="600"/>
+<img src="images/Picture1.png"/>
 
 ### 🛒 Giao diện trang cửa hàng
 <img src="images/Picture2.png" width="600"/>
