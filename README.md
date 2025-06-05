@@ -72,8 +72,7 @@ npm install
 3. Mở trình duyệt truy cập:
 
 ```bash
-[[npm install](http://localhost:4200
-)](http://localhost:4200)
+[http://localhost:4200](http://localhost:4200)
 ```
 ### Backend:
 
