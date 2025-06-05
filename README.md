@@ -89,5 +89,5 @@ ng serve
 
 ➡️ [http://localhost:8080](http://localhost:8080)
 
-> ⚠️ **Lưu ý:** Trước khi chạy ứng dụng Backend, bạn cần **import cơ sở dữ liệu (DB)** có sẵn vào MySQL. Sẽ được cung cấp nếu có nhu cầu tham khảo
+> ⚠️ **Lưu ý:** Trước khi chạy ứng dụng Backend, bạn cần **import cơ sở dữ liệu (DB)** có sẵn vào MySQL. (Ib nếu có nhu cầu tham khảo)
 
