@@ -15,7 +15,7 @@
 
 ### Backend:
 
-- Java 17, Spring Boot 2  
+- Java 17, Spring Boot 2.6.4
 - Spring Security + JWT  
 - MySQL, JPA (Hibernate)
   
@@ -88,4 +88,8 @@ ng serve
 3. Cổng truy cập backend mặc định:
 
 ➡️ [http://localhost:8080](http://localhost:8080)
+
+> ⚠️ **Lưu ý:**  
+> Trước khi chạy ứng dụng Backend, bạn cần **import cơ sở dữ liệu (DB)** có sẵn vào MySQL.  
+> Sẽ được cung cấp nếu có nhu cầu tham khảo
 
