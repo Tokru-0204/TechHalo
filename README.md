@@ -48,18 +48,23 @@
 
 ### Backend:
 
-- Java 17, Spring Boot 3  
+- Java 17, Spring Boot 2  
 - Spring Security + JWT  
 - MySQL, JPA (Hibernate)  
-- Swagger UI (API Docs)
-
 ---
 
 ## ⚙️ Cài đặt & chạy thử
 
-### Backend:
+### Frontend
+
+1. Cài đặt các package:
 
 ```bash
-cd BE
-# Cập nhật database trong application.properties
-./mvnw spring-boot:run
+npm install
+```
+2.Chạy server Angular:
+
+### Backend:
+
+Cấu hình DB trong application.properties
+Run
