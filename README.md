@@ -27,7 +27,8 @@
 - ✅ Giỏ hàng, thanh toán, mã giảm giá  
 - ✅ CRUD sản phẩm, đơn hàng, thống kê  
 - ✅ Giao diện responsive & hiện đại  
-
+- ...
+  
 ---
 
 ## 📷 Giao diện trang web
