@@ -62,8 +62,7 @@
 ```bash
 npm install
 ```
-
-2.Chạy server Angular:
+2. Chạy server Angular:
 
 ```bash
 npm install
@@ -71,9 +70,8 @@ npm install
 
 3. Mở trình duyệt truy cập:
 
-```bash
 [http://localhost:4200](http://localhost:4200)
-```
+
 ### Backend:
 
 Cấu hình DB trong application.properties
