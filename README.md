@@ -65,14 +65,26 @@ npm install
 2. Chạy server Angular:
 
 ```bash
-npm install
+ng serve
 ```
 
 3. Mở trình duyệt truy cập:
 
-[http://localhost:4200](http://localhost:4200)
+➡️ [http://localhost:4200](http://localhost:4200)
 
 ### Backend:
 
-Cấu hình DB trong application.properties
-Run
+1. Cấu hình application.properties
+
+2. Chạy ứng dụng Spring Boot:
+
+- Chạy trực tiếp trong IDE hoặc dùng lệnh sau trong terminal:
+
+```bash
+./mvnw spring-boot:run
+```
+
+3. Cổng truy cập backend mặc định:
+
+➡️ [http://localhost:4200](http://localhost:4200)
+
