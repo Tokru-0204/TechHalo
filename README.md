@@ -8,7 +8,7 @@
 
 ### Frontend:
 
-- Angular (CLI 12+)  
+- Angular
 - Angular Material, SCSS  
 - RxJS, ngx-pagination, toastr, slick-carousel  
 - Chart.js, jsPDF, SweetAlert2  
